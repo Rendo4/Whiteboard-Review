@@ -30,17 +30,19 @@ Output: [7, 9, "hi", 12, 53]
 
 function removeDoubles(userArray){
   let newArray = [];
+  newArray.push(userArray[0]);
   for (let i = 0; i < userArray.length; i++) {
-      if (i = 0 && newArray.length < 1) {
-        newArray.push(userArray[i]);
-      }
       for ( let j = 0 ; j < newArray.length; j++) {
         if (userArray[i] == newArray[j]) {
           break; 
-       } else {
+       } else if (j == newArray.length -1) {
         newArray.push(userArray[i]);  
       }
      }
    }
-   return newArray; 
+   console.log(newArray); 
 }
+
+let uniqueChars = testArray.filter((c, index) => {
+    return testArray.indexOf(c) === index;
+});
