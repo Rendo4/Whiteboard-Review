@@ -62,35 +62,18 @@ Solution:
 
 function condenseString(string){
   const userArray = string.split("");
-  uniqueChars = [];
-  uniqueChars.push(1);
-  uniqueChars.push(userArray[0]);
-  for (let i = 0; i < userArray.length; i++) {
-    for ( let j = 0 ; j < uniqueChars.length; j++) {
-      if (userArray[i] == uniqueChars[j]) {
-        uniqueChars[j - 1] = uniqueChars[j - 1] + 1;
-      } else {
-        uniqueChars.push(1);
-        uniqueChars.push(userArray[i]);
-    	}
-		}
-  }
-  return uniqueChars;
-}
-
-let test = "aaabccdddda";
-
-condenseString(test);
-
-function condenseString(string){
-  const userArray = string.split("");
+  let uniqueChars = [];
   let counter = 1;
-  for( let i = 1; i < userArray.length; i++){
+  for( let i = 1; i < userArray.length; i++  || i + 1 == userArray.length){
     if( userArray[i] != userArray[i-1] ) {
       uniqueChars.push(counter);
       uniqueChars.push(userArray[i-1]);
       counter = 0;
     }
-    counter++:
+		if( i + 1 == userArray.length ){
+      uniqueChars.push(userArray[i]);
+    }
+    counter++;
   }
+  return uniqueChars;
 }
